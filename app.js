@@ -19,11 +19,11 @@ app.get("/",function (req,res) {
 app.post("/",function(req,res){
     const item = req.body.newItem;
     if(req.body.list==="Work"){
-        workItems.push(item);
+        if(item != "")workItems.push(item);
         res.redirect("/work");
     }
     else{
-        items.push(item);
+      if(item != "")items.push(item);
         res.redirect("/"); 
     }
 });
